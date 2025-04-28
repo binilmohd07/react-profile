@@ -47,3 +47,23 @@ h2 {
     margin: 5px;
     border-radius: 5px;
 }
+
+.job-entry {
+    margin-bottom: 30px;
+}
+
+.job-entry h4 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.company {
+    font-weight: normal;
+    color: #555;
+}
+
+.duration {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+}
