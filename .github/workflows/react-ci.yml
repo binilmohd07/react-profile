@@ -1,14 +1,10 @@
-name: React CI
+name: React Profile
 
 on:
   push:
-    branches:
-      - main
+    branches: [master]
   pull_request:
-    branches:
-      - main
-  workflow_dispatch:  # This allows manual triggers via GitHub UI
-
+    branches: [master]
 
 jobs:
   build:
