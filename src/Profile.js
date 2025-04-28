@@ -7,7 +7,7 @@ const Profile = () => {
         <div className="profile-container">
             <div className="profile-header">
                 <img src={profilePic} alt="Profile" className="profile-photo" />
-                <h1>Alex Morgan</h1>
+                <h1>Binil Mohamed Nizar</h1>
                 <h2>Senior Software Engineer</h2>
                 <p>
                     8 years of experience building scalable web apps, leading engineering teams,
@@ -37,9 +37,9 @@ const Profile = () => {
 
             <div className="profile-section">
                 <h3>Contact</h3>
-                <p>Email: alex.morgan.dev@example.com</p>
-                <p>LinkedIn: linkedin.com/in/alexmorgan</p>
-                <p>GitHub: github.com/alexmorgan</p>
+                <p>Email: binilmohamed07@gmail.com</p>
+                <p>LinkedIn: linkedin.com/in/binil-mohamed-nizar-033089153</p>
+                <p>GitHub: github.com/binilmohamed07</p>
             </div>
         </div>
     );
