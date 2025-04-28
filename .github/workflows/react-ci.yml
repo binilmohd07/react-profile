@@ -30,8 +30,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "binilmohamed07@gmail.com"
+          git config --global user.name "Binil Mohamed Nizar"
           npm run deploy
         env:
           CI: true
