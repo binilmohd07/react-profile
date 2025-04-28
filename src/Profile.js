@@ -40,7 +40,7 @@ const Profile = () => {
 
                 <div className="job-entry">
                     <h4>Senior Software Engineer — <span className="company">Wipro Ltd.</span></h4>
-                    <p className="duration">2021 – Present</p>
+                    <p className="duration">Nov 2021 – Present</p>
                     <ul>
                         <li>Led a team of 6 engineers to deliver enterprise SaaS tools used by over 20,000 users</li>
                         <li>Architected CI/CD pipelines with GitHub Actions and Docker, reducing deployment time by 50%</li>
@@ -50,7 +50,7 @@ const Profile = () => {
 
                 <div className="job-entry">
                     <h4>Senior Software Engineer — <span className="company">Syncrayons Technologies Pvt. Ltd.</span></h4>
-                    <p className="duration">2018 – 2021</p>
+                    <p className="duration">Sep 2018 – Nov 2021</p>
                     <ul>
                         <li>Migrated legacy monolith to microservices on AWS, improving app scalability and reducing costs by 25%</li>
                         <li>Built RESTful APIs and integrated GraphQL services for customer-facing applications</li>
@@ -60,7 +60,7 @@ const Profile = () => {
 
                 <div className="job-entry">
                     <h4>Software Engineer — <span className="company">Vin Bytes Technologies Pvt. Ltd.</span></h4>
-                    <p className="duration">2017 – 2018</p>
+                    <p className="duration">Jun 2017 –  Aug 2018</p>
                     <ul>
                         <li>Developed internal tools using Python and Django to automate reporting and data entry workflows</li>
                         <li>Improved front-end performance by 40% by optimizing React components and lazy loading modules</li>
@@ -70,11 +70,10 @@ const Profile = () => {
 
                 <div className="job-entry">
                     <h4>Process Associate — <span className="company">RR Donnelley India</span></h4>
-                    <p className="duration">2013 – 2015</p>
+                    <p className="duration">Nov 2016 – Dec 2016</p>
                     <ul>
-                        <li>Assisted in development of responsive web applications using JavaScript and jQuery</li>
-                        <li>Wrote unit and integration tests to support a growing codebase</li>
-                        <li>Maintained and updated internal documentation for new devs</li>
+                        <li>Worked on a project for updating and bug fixing large amount of user data in UK electoral database using an Internal
+                            Tool</li>
                     </ul>
                 </div>
             </div>
