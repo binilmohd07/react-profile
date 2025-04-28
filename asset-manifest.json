@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/binilmohamed/static/css/main.7896661b.css",
+    "main.js": "/binilmohamed/static/js/main.420ae940.js",
+    "static/js/453.212d198d.chunk.js": "/binilmohamed/static/js/453.212d198d.chunk.js",
+    "static/media/profile.jpg": "/binilmohamed/static/media/profile.d9bccd021b189c957581.jpg",
+    "index.html": "/binilmohamed/index.html",
+    "main.7896661b.css.map": "/binilmohamed/static/css/main.7896661b.css.map",
+    "main.420ae940.js.map": "/binilmohamed/static/js/main.420ae940.js.map",
+    "453.212d198d.chunk.js.map": "/binilmohamed/static/js/453.212d198d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7896661b.css",
+    "static/js/main.420ae940.js"
+  ]
+}
