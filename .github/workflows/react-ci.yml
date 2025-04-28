@@ -32,5 +32,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+          npx gh-pages -d build \
+            -u "github-actions-bot <support+actions@github.com>" \
+            --repo "https://x-access-token:${GH_TOKEN}@github.com/<binilmohd07>/<react-profile>.git"
+
 
