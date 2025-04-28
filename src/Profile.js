@@ -11,7 +11,7 @@ const Profile = () => {
                 <h2>Senior Software Engineer</h2>
                 <p>
                     8 years of experience building scalable web apps, leading engineering teams,
-                    and shipping high-quality software solutions.
+                    and shipping high-quality software solutions...............
                 </p>
             </div>
 
