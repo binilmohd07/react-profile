@@ -1,36 +1,38 @@
-name: React CI
+name: React Profile
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Run tests
       - name: Run tests
         run: npm test -- --watchAll=false --ci
 
-      # Step 5: Build React app
       - name: Build React app
         run: npm run build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.email "binilmohamed07@gmail.com"
+          git config --global user.name "Binil Mohamed Nizar"
+          npm run deploy
+        env:
+          CI: true
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
