@@ -39,7 +39,7 @@ const Profile = () => {
                 <h3>Professional Experience</h3>
 
                 <div className="job-entry">
-                    <h4>Senior Software Engineer — <span className="company">TechNova Inc.</span></h4>
+                    <h4>Senior Software Engineer — <span className="company">Wipro Ltd.</span></h4>
                     <p className="duration">2021 – Present</p>
                     <ul>
                         <li>Led a team of 6 engineers to deliver enterprise SaaS tools used by over 20,000 users</li>
@@ -49,7 +49,7 @@ const Profile = () => {
                 </div>
 
                 <div className="job-entry">
-                    <h4>Full-Stack Developer — <span className="company">CloudShift Labs</span></h4>
+                    <h4>Senior Software Engineer — <span className="company">Syncrayons Technologies Pvt. Ltd.</span></h4>
                     <p className="duration">2018 – 2021</p>
                     <ul>
                         <li>Migrated legacy monolith to microservices on AWS, improving app scalability and reducing costs by 25%</li>
@@ -59,8 +59,8 @@ const Profile = () => {
                 </div>
 
                 <div className="job-entry">
-                    <h4>Software Engineer — <span className="company">DataWorks Solutions</span></h4>
-                    <p className="duration">2015 – 2018</p>
+                    <h4>Software Engineer — <span className="company">Vin Bytes Technologies Pvt. Ltd.</span></h4>
+                    <p className="duration">2017 – 2018</p>
                     <ul>
                         <li>Developed internal tools using Python and Django to automate reporting and data entry workflows</li>
                         <li>Improved front-end performance by 40% by optimizing React components and lazy loading modules</li>
@@ -69,7 +69,7 @@ const Profile = () => {
                 </div>
 
                 <div className="job-entry">
-                    <h4>Junior Developer — <span className="company">BrightSoft Studios</span></h4>
+                    <h4>Process Associate — <span className="company">RR Donnelley India</span></h4>
                     <p className="duration">2013 – 2015</p>
                     <ul>
                         <li>Assisted in development of responsive web applications using JavaScript and jQuery</li>
