@@ -9,11 +9,19 @@ import {
     ListItemText,
     Divider,
     Card,
-    CardContent,
-    Link,
-    Grid
+    Grid,
+    IconButton,
+    Accordion,
+    AccordionSummary,
+    AccordionDetails
 } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import DownloadIcon from '@mui/icons-material/Download';
 import profilePic from './profile.jpg';
+
 
 const experienceData = [
     {
@@ -57,109 +65,199 @@ const experienceData = [
 ];
 
 const Profile = () => {
+    const [expanded, setExpanded] = React.useState('summary');
+    const handleChange = panel => (e, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+
     return (
-        <Container maxWidth="md" sx={{ py: 5 }}>
-            <Card variant="outlined" sx={{ p: 3 }}>
-                {/* Header Section */}
-                <Box textAlign="center" mb={5}>
+        <>
+            {/* Fixed Header */}
+            <Box
+                component="header"
+                sx={{
+                    position: 'fixed',
+                    top: 0, left: 0, right: 0,
+                    zIndex: 1200,
+                    bgcolor: 'background.paper',
+                    borderBottom: '1px solid #e0e0e0',
+                    boxShadow: 2,
+                    px: 2, py: 1
+                }}
+            >
+                <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                    flexWrap="wrap"
+                >
                     <Avatar
                         src={profilePic}
                         alt="Binil Mohamed Nizar"
-                        sx={{
-                            width: { xs: 100, sm: 120 },
-                            height: { xs: 100, sm: 120 },
-                            mx: 'auto',
-                            mb: 2
-                        }}
+                        sx={{ width: { xs: 50, sm: 60, md: 80 }, height: { xs: 50, sm: 60, md: 80 } }}
                     />
-                    <Typography variant="h4" sx={{ fontSize: { xs: 24, sm: 32 } }}>
-                        Binil Mohamed Nizar
-                    </Typography>
-                    <Typography variant="h6" color="text.secondary">
-                        Senior Software Engineer
-                    </Typography>
-                    <Typography variant="body1" mt={2}>
-                        8 years of experience building scalable web apps, leading engineering teams, and shipping high-quality software solutions.
-                    </Typography>
+
+                    <Box textAlign="center" sx={{ flexGrow: 1, mx: 2 }}>
+                        <Typography variant="h6">Binil Mohamed Nizar</Typography>
+                        <Typography variant="body1" color="text.secondary">
+                            Senior Software Engineer
+                        </Typography>
+                    </Box>
+
+                    <Box display="flex" gap={1}>
+                        <IconButton
+                            href="https://github.com/binilmohamed07"
+                            target="_blank"
+                            size="small"
+                            sx={{ border: '1px solid', borderRadius: '50%' }}
+                        >
+                            <GitHubIcon fontSize="small" />
+                        </IconButton>
+                        <IconButton
+                            href="https://linkedin.com/in/binil-mohamed-nizar-033089153"
+                            target="_blank"
+                            size="small"
+                            sx={{ border: '1px solid', borderRadius: '50%' }}
+                        >
+                            <LinkedInIcon fontSize="small" />
+                        </IconButton>
+                        <IconButton
+                            href="mailto:binilmohamed07@gmail.com"
+                            size="small"
+                            sx={{ border: '1px solid', borderRadius: '50%' }}
+                        >
+                            <EmailIcon fontSize="small" />
+                        </IconButton>
+                        <IconButton
+                            href="/Resume-Binil_Mohamed_Nizar.pdf"
+                            download
+                            size="small"
+                            sx={{ border: '1px solid', borderRadius: '50%' }}
+                            aria-label="Download Resume"
+                        >
+                            <DownloadIcon fontSize="small" />
+                        </IconButton>
+
+                    </Box>
                 </Box>
+            </Box>
 
-                {/* Skills */}
-                <Divider sx={{ my: 4 }} />
-                <Box mb={4}>
-                    <Typography variant="h5" gutterBottom>Skills</Typography>
-                    <Grid container spacing={2}>
-                        {[
-                            'JavaScript / TypeScript',
-                            'React / Next.js',
-                            'Node.js / Express',
-                            'Python / Django',
-                            'AWS / Docker / CI-CD'
-                        ].map(skill => (
-                            <Grid item xs={12} sm={6} md={4} key={skill}>
-                                <Typography variant="body1">• {skill}</Typography>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-
-                {/* Highlights */}
-                <Divider sx={{ my: 4 }} />
-                <Box mb={4}>
-                    <Typography variant="h5" gutterBottom>Experience Highlights</Typography>
-                    <List>
-                        <ListItem>
-                            <ListItemText primary="🚀 Led a team of 6 engineers at TechNova to deliver SaaS tools used by 20k+ users" />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="🔧 Migrated legacy monolith to microservices, improving load times by 40%" />
-                        </ListItem>
-                        <ListItem>
-                            <ListItemText primary="📦 Architected CI/CD pipelines with GitHub Actions and Docker" />
-                        </ListItem>
-                    </List>
-                </Box>
-
-                {/* Professional Experience */}
-                <Divider sx={{ my: 4 }} />
-                <Box mb={4}>
-                    <Typography variant="h5" gutterBottom>Professional Experience</Typography>
-                    {experienceData.map((job, index) => (
-
-                        <CardContent>
-                            <Typography variant="h6">
-                                {job.title} — <Box component="span" fontWeight="fontWeightMedium">{job.company}</Box>
+            {/* Main Content */}
+            <Container
+                maxWidth="md"
+                sx={{ pt: { xs: '140px', sm: '160px' }, pb: 5 }}
+            >
+                <Card
+                    variant="outlined"
+                    sx={{
+                        border: '1px solid #e0e0e0',
+                        boxShadow: 2,
+                        bgcolor: 'background.paper'
+                    }}
+                >
+                    {/* Summary Accordion */}
+                    <Accordion
+                        expanded={expanded === 'summary'}
+                        onChange={handleChange('summary')}
+                        disableGutters
+                    >
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h5">Summary</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                8 years of experience building scalable web apps, leading engineering teams, and shipping high-quality software solutions.
                             </Typography>
-                            <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-                                {job.duration}
-                            </Typography>
-                            <List dense>
-                                {job.responsibilities.map((item, idx) => (
-                                    <ListItem key={idx} disableGutters>
-                                        <ListItemText primary={`• ${item}`} />
-                                    </ListItem>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    {/* Skills Accordion */}
+                    <Accordion
+                        expanded={expanded === 'skills'}
+                        onChange={handleChange('skills')}
+                        disableGutters
+                    >
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h5">Skills</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Grid container spacing={2}>
+                                {[
+                                    'JavaScript / TypeScript',
+                                    'React / Next.js',
+                                    'Node.js / Express',
+                                    'Python / Django',
+                                    'AWS / Docker / CI-CD'
+                                ].map(skill => (
+                                    <Grid item xs={12} sm={6} md={4} key={skill}>
+                                        <Typography>• {skill}</Typography>
+                                    </Grid>
                                 ))}
+                            </Grid>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    {/* Highlights Accordion */}
+                    <Accordion
+                        expanded={expanded === 'highlights'}
+                        onChange={handleChange('highlights')}
+                        disableGutters
+                    >
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h5">Experience Highlights</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <List>
+                                <ListItem>
+                                    <ListItemText primary="🚀 Led a team of 6 engineers at TechNova to deliver SaaS tools used by 20k+ users" />
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText primary="🔧 Migrated legacy monolith to microservices, improving load times by 40%" />
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText primary="📦 Architected CI/CD pipelines with GitHub Actions and Docker" />
+                                </ListItem>
                             </List>
-                        </CardContent>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
 
-                    ))}
-                </Box>
-
-                {/* Contact */}
-                <Divider sx={{ my: 4 }} />
-                <Box>
-                    <Typography variant="h5" gutterBottom>Contact</Typography>
-                    <Typography>
-                        Email: <Link href="mailto:binilmohamed07@gmail.com">binilmohamed07@gmail.com</Link>
-                    </Typography>
-                    <Typography>
-                        LinkedIn: <Link href="https://linkedin.com/in/binil-mohamed-nizar-033089153" target="_blank" rel="noreferrer">View Profile</Link>
-                    </Typography>
-                    <Typography>
-                        GitHub: <Link href="https://github.com/binilmohamed07" target="_blank" rel="noreferrer">github.com/binilmohamed07</Link>
-                    </Typography>
-                </Box>
-            </Card>
-        </Container>
+                    {/* Experience Accordion */}
+                    <Accordion
+                        expanded={expanded === 'experience'}
+                        onChange={handleChange('experience')}
+                        disableGutters
+                    >
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography variant="h5">Professional Experience</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            {experienceData.map((job, idx) => (
+                                <Box key={idx} mb={3}>
+                                    <Typography variant="h6">
+                                        {job.title} —{' '}
+                                        <Box component="span" fontWeight="medium">{job.company}</Box>
+                                    </Typography>
+                                    <Typography variant="subtitle2" color="text.secondary" gutterBottom>
+                                        {job.duration}
+                                    </Typography>
+                                    <List dense>
+                                        {job.responsibilities.map((item, i) => (
+                                            <ListItem key={i} disableGutters>
+                                                <ListItemText primary={`• ${item}`} />
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </Box>
+                            ))}
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+                </Card>
+            </Container>
+        </>
     );
 };
 
