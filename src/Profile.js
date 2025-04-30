@@ -13,7 +13,8 @@ import {
     IconButton,
     Accordion,
     AccordionSummary,
-    AccordionDetails
+    AccordionDetails,
+    Link
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -28,6 +29,8 @@ const experienceData = [
         title: 'Senior Software Engineer',
         company: 'Wipro Ltd.',
         duration: 'Nov 2021 – Present',
+        logo: '/logos/wipro.png',
+        link: 'https://www.wipro.com',
         responsibilities: [
             'Led a team of 6 engineers to deliver enterprise SaaS tools used by over 20,000 users',
             'Architected CI/CD pipelines with GitHub Actions and Docker, reducing deployment time by 50%',
@@ -38,6 +41,8 @@ const experienceData = [
         title: 'Senior Software Engineer',
         company: 'Syncrayons Technologies Pvt. Ltd.',
         duration: 'Sep 2018 – Nov 2021',
+        logo: '/logos/syncrayons.png',
+        link: 'https://www.syncrayons.com',
         responsibilities: [
             'Migrated legacy monolith to microservices on AWS, improving app scalability and reducing costs by 25%',
             'Built RESTful APIs and integrated GraphQL services for customer-facing applications',
@@ -48,6 +53,8 @@ const experienceData = [
         title: 'Software Engineer',
         company: 'Vin Bytes Technologies Pvt. Ltd.',
         duration: 'Jun 2017 – Aug 2018',
+        logo: 'logos/vinbytes.png',
+        link: 'https://www.vinbytes.com',
         responsibilities: [
             'Developed internal tools using Python and Django to automate reporting and data entry workflows',
             'Improved front-end performance by 40% by optimizing React components and lazy loading modules',
@@ -58,11 +65,14 @@ const experienceData = [
         title: 'Process Associate',
         company: 'RR Donnelley India',
         duration: 'Nov 2016 – Dec 2016',
+        logo: profilePic,
+        link: 'https://www.rrd.com',
         responsibilities: [
             'Updated and bug fixed large amounts of user data in UK electoral database using an internal tool',
         ]
     },
 ];
+
 
 const Profile = () => {
     const [expanded, setExpanded] = React.useState('summary');
@@ -147,6 +157,8 @@ const Profile = () => {
                 maxWidth="md"
                 sx={{ pt: { xs: '140px', sm: '160px' }, pb: 5 }}
             >
+                <img src="profilePic" alt="Wipro logo" />
+
                 <Card
                     variant="outlined"
                     sx={{
@@ -236,10 +248,21 @@ const Profile = () => {
                         <AccordionDetails>
                             {experienceData.map((job, idx) => (
                                 <Box key={idx} mb={3}>
-                                    <Typography variant="h6">
-                                        {job.title} —{' '}
-                                        <Box component="span" fontWeight="medium">{job.company}</Box>
-                                    </Typography>
+                                    <Box display="flex" alignItems="center" gap={1}>
+                                        <Box
+                                            component="img"
+                                            src={job.logo}
+                                            alt={`${job.company} logo`}
+                                            sx={{ width: 28, height: 28 }}
+                                        />
+                                        <Typography variant="h6">
+                                            {job.title} —{' '}
+                                            <Link href={job.link} target="_blank" underline="hover" fontWeight="medium">
+                                                {job.company}
+                                            </Link>
+                                        </Typography>
+                                    </Box>
+
                                     <Typography variant="subtitle2" color="text.secondary" gutterBottom>
                                         {job.duration}
                                     </Typography>
@@ -257,6 +280,13 @@ const Profile = () => {
                     <Divider />
                 </Card>
             </Container>
+            <Box
+                component="img"
+                src="/logos/wipro.png"
+                alt="Wipro logo"
+                sx={{ width: 28, height: 28 }}
+            />
+
         </>
     );
 };
