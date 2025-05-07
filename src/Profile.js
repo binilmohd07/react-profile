@@ -22,14 +22,18 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import DownloadIcon from '@mui/icons-material/Download';
 import profilePic from './profile.jpg';
-
+import wiproLogo from '../src/public/logos/wipro.png';
+import syncLogo from '../src/public/logos/syncrayons.png';
+import rrdLogo from '../src/public/logos/rrd.png';
+import vinLogo from '../src/public/logos/vinbytes.png';
+import bmResume from '../src/public/Resume-Binil_Mohamed_Nizar.pdf'
 
 const experienceData = [
     {
         title: 'Senior Software Engineer',
         company: 'Wipro Ltd.',
         duration: 'Nov 2021 – Present',
-        logo: '/logos/wipro.png',
+        logo: wiproLogo,
         link: 'https://www.wipro.com',
         responsibilities: [
             'Led a team of 6 engineers to deliver enterprise SaaS tools used by over 20,000 users',
@@ -41,7 +45,7 @@ const experienceData = [
         title: 'Senior Software Engineer',
         company: 'Syncrayons Technologies Pvt. Ltd.',
         duration: 'Sep 2018 – Nov 2021',
-        logo: '/logos/syncrayons.png',
+        logo: syncLogo,
         link: 'https://www.syncrayons.com',
         responsibilities: [
             'Migrated legacy monolith to microservices on AWS, improving app scalability and reducing costs by 25%',
@@ -51,9 +55,9 @@ const experienceData = [
     },
     {
         title: 'Software Engineer',
-        company: 'Vin Bytes Technologies Pvt. Ltd.',
+        company: 'Vin ByTes Technologies Pvt Ltd.',
         duration: 'Jun 2017 – Aug 2018',
-        logo: 'logos/vinbytes.png',
+        logo: vinLogo,
         link: 'https://www.vinbytes.com',
         responsibilities: [
             'Developed internal tools using Python and Django to automate reporting and data entry workflows',
@@ -65,7 +69,7 @@ const experienceData = [
         title: 'Process Associate',
         company: 'RR Donnelley India',
         duration: 'Nov 2016 – Dec 2016',
-        logo: profilePic,
+        logo: rrdLogo,
         link: 'https://www.rrd.com',
         responsibilities: [
             'Updated and bug fixed large amounts of user data in UK electoral database using an internal tool',
@@ -139,7 +143,7 @@ const Profile = () => {
                             <EmailIcon fontSize="small" />
                         </IconButton>
                         <IconButton
-                            href="/Resume-Binil_Mohamed_Nizar.pdf"
+                            href={bmResume}
                             download
                             size="small"
                             sx={{ border: '1px solid', borderRadius: '50%' }}
@@ -157,7 +161,6 @@ const Profile = () => {
                 maxWidth="md"
                 sx={{ pt: { xs: '140px', sm: '160px' }, pb: 5 }}
             >
-                <img src="profilePic" alt="Wipro logo" />
 
                 <Card
                     variant="outlined"
@@ -280,13 +283,6 @@ const Profile = () => {
                     <Divider />
                 </Card>
             </Container>
-            <Box
-                component="img"
-                src="/logos/wipro.png"
-                alt="Wipro logo"
-                sx={{ width: 28, height: 28 }}
-            />
-
         </>
     );
 };
