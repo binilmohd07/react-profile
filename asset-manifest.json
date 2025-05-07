@@ -1,16 +1,20 @@
 {
   "files": {
     "main.css": "/react-profile/static/css/main.e6c13ad2.css",
-    "main.js": "/react-profile/static/js/main.769a1094.js",
+    "main.js": "/react-profile/static/js/main.4f606820.js",
     "static/js/453.212d198d.chunk.js": "/react-profile/static/js/453.212d198d.chunk.js",
     "static/media/profile.jpg": "/react-profile/static/media/profile.d9bccd021b189c957581.jpg",
+    "static/media/vinbytes.png": "/react-profile/static/media/vinbytes.d2c3afb44d9ff1ae7bde.png",
+    "static/media/Resume-Binil_Mohamed_Nizar.pdf": "/react-profile/static/media/Resume-Binil_Mohamed_Nizar.f32f8473c369ef13ff35.pdf",
+    "static/media/wipro.png": "/react-profile/static/media/wipro.8ca0168bb48a1ef72801.png",
+    "static/media/rrd.png": "/react-profile/static/media/rrd.ab9abb67f4df31bd1983.png",
     "index.html": "/react-profile/index.html",
     "main.e6c13ad2.css.map": "/react-profile/static/css/main.e6c13ad2.css.map",
-    "main.769a1094.js.map": "/react-profile/static/js/main.769a1094.js.map",
+    "main.4f606820.js.map": "/react-profile/static/js/main.4f606820.js.map",
     "453.212d198d.chunk.js.map": "/react-profile/static/js/453.212d198d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.769a1094.js"
+    "static/js/main.4f606820.js"
   ]
 }
